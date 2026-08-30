@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 10s
+  evaluation_interval: 10s
+
+scrape_configs:
+  - job_name: 'civicpulse-backend'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['civicpulse-backend:8080']
+        labels:
+          application: 'civicpulse-backend'
+          environment: 'docker'
+
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']

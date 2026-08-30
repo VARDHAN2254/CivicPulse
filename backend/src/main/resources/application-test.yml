@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: test
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  flyway:
+    enabled: true
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+
+civicpulse:
+  security:
+    jwt:
+      secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration-ms: 3600000
+      refresh-expiration-ms: 86400000
+    qr:
+      secret-key: test_qr_secret_key_9d8a7c6b5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b
+  rate-limit:
+    enabled: false
